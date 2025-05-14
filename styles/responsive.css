@@ -2,11 +2,13 @@
 /* Desktop 1250~1920 */
 /* Tablet 1249~850 */
 @media screen and (max-width:1249px){
+    #wrap .intro {padding:0 80px;}
+    #wrap .intro .container {width:100%;} /* max-width때문에 width 안 써도 됨. max-width:1250px;이하는 전부 %로 처리 */
     #wrap .intro .container h1:nth-child(2) {font-size:3.125rem;}
     #wrap .intro .container .sponsor_btn {width:270px; line-height:62px; font-size:1.375rem;}
     #wrap .intro .container .sponsor_question {width:333px; height:54px; font-size:1.25rem;}
 }
 /* Mobile 849~320 */
 @media screen and (max-width:849px){
-
+    #wrap .intro {padding:0 15px;}
 }
