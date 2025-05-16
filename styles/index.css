@@ -5,7 +5,7 @@ body * {transition:all 0.5s;}
 #wrap {} /* 기본값 유지를 위해 작성하지 않음. 기본값 -> 너비는 부모의 100%, 높이는 내용만큼 */ 
     /* ==============1행 intro */
 #wrap .intro {
-    height:100vh; 
+    height:100vh;
     background:url(../images/bg1.png) no-repeat center / cover;
     position:relative;
 }
@@ -145,6 +145,80 @@ body * {transition:all 0.5s;}
 }
 /* 4행========================빙하면적감소 */
 /* 5행========================인류재앙 */
+#wrap .disaster {
+    background:#F5F5F5;
+    padding:200px 0;
+}
+#wrap .disaster .container {
+    border:1px solid red;
+    max-width:1250px; min-width:320px;
+    /* 최소 320~최대 1250 사이 너비값은 가변형 세팅 */
+    /* (위)큰 범위값 세팅 후 @media 규칙내에서 태블릿, 모바일에 맞는 레이아웃 재수정하며 반응형 제작 */
+    margin:0 auto;
+    text-align:center;
+}
+#wrap .disaster .container h2 {
+    font-size:3.438rem;
+    font-weight:500;
+    letter-spacing:-0.1;
+}
+#wrap .disaster .container > p {
+    line-height:1.7;
+    font-size:1.25rem;
+    margin:55px 0;
+}
+#wrap .disaster .container .list {
+    display:flex; 
+    /* 옆으로 정렬하는 대상(li)의 부모(flex) */
+    /* flex의 자식요소들을 옆으로 정렬(기본값) flex-flow:row nowrap; */
+    gap:20px;
+}
+#wrap .disaster .container .list li {
+    background:#fff;
+    flex:1;
+}
+#wrap .disaster .container .list li .bg {
+    height:320px;
+    background-position:0 55%;
+    background-size:cover;
+    position:relative;
+    padding:48px 0;
+}
+#wrap .disaster .container .list li .bg::before {
+    content:''; display:block; z-index:50;
+    position:absolute; left:0; top:0; width:100%; height:100%;
+    /* (위) content~height속성까지 before 또는 after 가상요소 사용 시 필수속성 모음 */
+    background:linear-gradient(#000 19%, transparent 55%)
+    /* background:linear-gradient(#첫번째색상 위치%, #두번째색상 위치%) */
+}
+#wrap .disaster .container .list li .bg h3 {
+    color:#fff; position:relative; z-index:60;
+    /* z-index속성은 position속성이 선행되어야만 사용할 수 있는 중첩순서이다. */
+    font-size:2.688rem; font-weight:700;
+    margin-bottom:11px;
+}
+#wrap .disaster .container .list li .bg p {
+    color:#fff; position:relative; z-index:60;
+    line-height:1.7;
+    font-size:1.25rem;
+}
+#wrap .disaster .container .list li > p {
+    height:250px;
+    padding:20px;
+    line-height:1.7;
+    font-size:1.25rem;
+    letter-spacing:0.2;
+}
+/* 5행 개별 배경 선택자 */
+#wrap .disaster .container .list li:nth-child(1) .bg {
+    background-image:url(../images/28.png);
+}
+#wrap .disaster .container .list li:nth-child(2) .bg {
+    background-image:url(../images/27.png);
+}
+#wrap .disaster .container .list li:nth-child(3) .bg {
+    background-image:url(../images/wwf.jpg)
+}
 /* 6행========================지구위기 */
 /* 7행========================WWF단체홍보 */
 /* 8행========================다양한활동 */
